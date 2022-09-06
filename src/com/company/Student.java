@@ -8,9 +8,9 @@ public class Student {
     private int schoolYear;
     private String studentId;
     private static int id = 1000;
-    private static int costOfCourse = 600;
-    private String courses;
-    private String tuitionBalance;
+    private static double costOfCourse = 600;
+    private String courses = null;
+    private double tuitionBalance = 0;
 
 
     public Student(){
@@ -42,7 +42,38 @@ public class Student {
         this.studentId = schoolYear +""+ id;
 
     }
-
+    //Enroll in courses
+    public void enroll(){
+        //Get inside a loop,until user hits Q
+         do {
+             System.out.print("Enter a course to enroll,Press Q to Quit:");
+             Scanner sc = new Scanner(System.in);
+             String course = sc.nextLine();
+             if (!course.equals("Q")) {
+                 courses = courses + "\n" + course;
+                 tuitionBalance = tuitionBalance + costOfCourse;
+             }
+             else {
+                 break;
+             }
+         }
+         while (1!=0);
+        System.out.println("Enrolled In:"+ courses);
+    }
+    // View Balance
+    public void viewBalance(){
+        System.out.println("Your balance is:$"+ tuitionBalance);
+    }
+//Pay Tuition
+    public void tuitionPayment(){
+        viewBalance();
+        System.out.print("Enter your payment $");
+        Scanner sc = new Scanner(System.in);
+        double payment = sc.nextDouble();
+        tuitionBalance = tuitionBalance - payment;
+        System.out.println("Thank you for your payment of $:"+payment);
+        viewBalance();
+    }
 
 
 }
