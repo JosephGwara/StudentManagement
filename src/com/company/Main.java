@@ -6,5 +6,6 @@ public class Main {
 	Student st = new Student();
     st.enroll();
     st.tuitionPayment();
+    System.out.println(st.toString());
     }
 }
