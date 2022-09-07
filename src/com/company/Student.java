@@ -3,9 +3,9 @@ package com.company;
 import java.util.Scanner;
 
 public class Student {
-    private String firstName;
-    private String surname;
-    private int schoolYear;
+    private final String firstName;
+    private final String surname;
+    private final int schoolYear;
     private String studentId;
     private static int id = 1000;
     private static double costOfCourse = 600;
