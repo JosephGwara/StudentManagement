@@ -19,11 +19,20 @@ public class Main {
             students[n].tuitionPayment();
         }
         //printing all the registered students information
-        for(int n = 0;n < numOfStudents;n++){
-            System.out.println(students[n].toString());
+        System.out.println("Press P to print all student details,Press Q to Quit:");
+        do {
+            String printStudents = sc.nextLine();
+            if (printStudents.equals("P")) {
 
+                for(int n = 0;n < numOfStudents;n++){
+                    System.out.println(students[n].toString());
+                }
+                break;
+            }
+            else if (printStudents.equals("Q")){
+                break;
+            }
         }
-
-
+        while (1!=0);
     }
 }
